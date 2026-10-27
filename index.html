@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Mahesa Wisnu Hutama</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      :root {
+        --bg: #0b1020;
+        --card: #151e33;
+        --accent: #70e1d1;
+        --text: #ffffff;
+        --muted: #aab5ce;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: auto;
+      }
+
+      /* NAVBAR */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: #0b1020;
+        border-bottom: 1px solid #283149;
+      }
+
+      nav {
+        min-height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .logo span {
+        color: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--muted);
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        padding: 70px 0;
+      }
+
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .tag {
+        color: var(--accent);
+        letter-spacing: 3px;
+        font-size: 13px;
+        font-weight: bold;
+      }
+
+      h1 {
+        font-size: clamp(38px, 6vw, 65px);
+        line-height: 1.15;
+        margin: 20px 0;
+      }
+
+      h1 span {
+        color: var(--accent);
+      }
+
+      .hero p {
+        color: var(--muted);
+        margin-bottom: 25px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 22px;
+        border-radius: 30px;
+        background: var(--accent);
+        color: #07131b;
+        font-weight: bold;
+        margin: 5px 5px 5px 0;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        opacity: 0.85;
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+      }
+
+      .profile {
+        min-height: 300px;
+        background: linear-gradient(135deg, #243b55, #14152e);
+        border: 1px solid #34415b;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 25px;
+      }
+
+      .profile .avatar {
+        font-size: 85px;
+      }
+
+      .profile p {
+        margin: 0;
+      }
+
+      /* SECTION */
+      section {
+        padding: 75px 0;
+      }
+
+      .section-title {
+        margin-bottom: 35px;
+      }
+
+      .section-title h2 {
+        font-size: 38px;
+        margin-top: 5px;
+      }
+
+      .section-title p {
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .card {
+        background: var(--card);
+        padding: 25px;
+        border: 1px solid #283149;
+        border-radius: 18px;
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+      }
+
+      .card h3 {
+        margin: 12px 0;
+      }
+
+      .card p {
+        color: var(--muted);
+      }
+
+      .icon {
+        font-size: 35px;
+      }
+
+      /* ABOUT */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+      }
+
+      .about-info p {
+        color: var(--muted);
+      }
+
+      .info-list {
+        list-style: none;
+        margin-top: 20px;
+      }
+
+      .info-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #283149;
+      }
+
+      .info-list strong {
+        color: var(--accent);
+      }
+
+      /* SKILLS */
+      .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .skill {
+        background: #222e48;
+        color: var(--accent);
+        padding: 7px 13px;
+        border-radius: 20px;
+        font-size: 13px;
+      }
+
+      /* PROJECT */
+      .project-image {
+        background: linear-gradient(135deg, #1c5261, #39305c);
+        height: 150px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+        margin-bottom: 20px;
+      }
+
+      .project-link {
+        display: inline-block;
+        margin-top: 15px;
+        color: var(--accent);
+      }
+
+      /* CONTACT */
+      .contact-box {
+        background: linear-gradient(135deg, #172b42, #211d42);
+        padding: 40px;
+        border-radius: 25px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .contact-box p {
+        color: var(--muted);
+      }
+
+      .contact-item {
+        display: block;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px;
+        margin-bottom: 12px;
+        border-radius: 12px;
+        overflow-wrap: anywhere;
+      }
+
+      .contact-item span {
+        display: block;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* FOOTER */
+      footer {
+        text-align: center;
+        padding: 25px;
+        color: var(--muted);
+        border-top: 1px solid #283149;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .hero-content,
+        .about-grid,
+        .contact-box {
+          grid-template-columns: 1fr;
+        }
+
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        nav {
+          align-items: flex-start;
+          padding: 18px 0;
+          gap: 15px;
+          flex-direction: column;
+        }
+
+        .nav-links {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        h1 {
+          font-size: 42px;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-box {
+          padding: 22px;
+        }
+
+        .section-title h2 {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header>
+      <nav class="container">
+        <a href="#home" class="logo">PORTOFOLIO<span>.</span></a>
+
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#achievement">Achievement</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div>
+          <h1>
+            Halo, Saya<br />
+            <span>Mahesa Wisnu Hutama.</span>
+          </h1>
+
+          <p>
+            Saya mahasiswa Informatika yang tertarik pada teknologi,
+            pemrograman, dan pengembangan website. Saya terus belajar dan
+            mengembangkan kemampuan untuk menciptakan karya yang bermanfaat.
+          </p>
+
+          <a href="#projects" class="btn">Lihat Proyek</a>
+          <a href="#contact" class="btn btn-outline"> Hubungi Saya </a>
+        </div>
+
+        <div class="profile">
+          <div>
+            <div class="avatar"></div>
+            <img
+              src="pasfoto mahesa.png.jpg"
+              alt="Mahesa Wisnu Hutama"
+              style="width: 100px; height: 100px; border-radius: 50%"
+            />
+            <h3>Mahesa Wisnu Hutama</h3>
+            <p>Informatics Student</p>
+            <p>Belajar, Berkarya, Berkembang.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <div class="tag">KENALI SAYA</div>
+          <h2>About Me</h2>
+          <p>Profil singkat dan latar belakang saya.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="card about-info">
+            <h3>Perkenalan</h3>
+
+            <p>
+              Halo! Saya Nama Saya Mahesa Wisnu Hutama, mahasiswa Program Studi
+              Informatika. Saya memiliki minat dalam bidang teknologi informasi,
+              khususnya pemrograman, pengembangan website, dan pemecahan
+              masalah.
+            </p>
+
+            <p style="margin-top: 15px">
+              Saya ingin terus meningkatkan kemampuan teknis dan soft skill
+              melalui pembelajaran, latihan, serta pengalaman mengerjakan
+              proyek.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Informasi Pribadi Akademik</h3>
+
+            <ul class="info-list">
+              <li><strong>Nama:</strong> Mahesa Wisnu Hutama</li>
+              <li><strong>NIM:</strong> 26051204107</li>
+              <li><strong>Program Studi:</strong> Teknik Informatika</li>
+              <li><strong>Universitas:</strong> Universita Negeri Surabaya</li>
+              <li><strong>Status:</strong> Mahasiswa Aktif</li>
+              <li><strong>Aktivitas:</strong> Belajar dan Membuat Proyek</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT I CAN DO -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-title">
+          <div class="tag">KEMAMPUAN SAYA</div>
+          <h2>What I Can Do</h2>
+          <p>Skill dan tools yang sedang saya pelajari.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <div class="icon">🌐</div>
+            <h3>Web Development</h3>
+            <p>
+              Membuat halaman website sederhana dan mengatur tampilan agar
+              menarik serta responsif.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript Dasar</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icon">💻</div>
+            <h3>Programming Tools</h3>
+            <p>
+              Menggunakan aplikasi untuk menulis kode, mengelola file, dan
+              mengembangkan proyek.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill">VS Code</span>
+              <span class="skill">Git</span>
+              <span class="skill">GitHub</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icon">🧠</div>
+            <h3>Soft Skills</h3>
+            <p>
+              Mengembangkan kemampuan berpikir logis, komunikasi, dan kerja
+              sama.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill">Problem Solving</span>
+              <span class="skill">Teamwork</span>
+              <span class="skill">Disiplin</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK GALLERY -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-title">
+          <div class="tag">KARYA SAYA</div>
+          <h2>Work Gallery</h2>
+          <p>Beberapa proyek yang dapat ditampilkan.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <div class="project-image">🌐</div>
+            <h3>Website Portofolio</h3>
+            <p>
+              Website pribadi yang dirancang untuk menampilkan profil diri,
+              keterampilan, pengalaman, proyek, pencapaian, dan informasi
+              kontak. Website ini menjadi sarana untuk memperkenalkan kemampuan
+              serta hasil karya di bidang teknologi dan pemrograman secara
+              profesional.
+            </p>
+            <a href="#contact" class="project-link"> Lihat Detail ↗ </a>
+          </div>
+
+          <div class="card">
+            <div class="project-image">🧩</div>
+            <h3>Proyek Pemrograman</h3>
+            <p>
+              Bagian ini menampilkan berbagai proyek pemrograman yang telah
+              dibuat, mulai dari program sederhana hingga pengembangan website.
+              Setiap proyek dilengkapi dengan deskripsi, tujuan, teknologi yang
+              digunakan, serta hasil yang dicapai sebagai bentuk penerapan
+              keterampilan pemrograman.
+            </p>
+            <a href="#contact" class="project-link"> Lihat Detail ↗ </a>
+          </div>
+
+          <div class="card">
+            <div class="project-image">💡</div>
+            <h3>Proyek Berikutnya</h3>
+            <p>
+              Bagian ini berisi rencana proyek yang akan dikembangkan
+              selanjutnya, baik berupa karya pribadi, proyek kelompok, maupun
+              latihan pengembangan website. Tujuannya adalah untuk meningkatkan
+              keterampilan, memperluas pengetahuan, dan menghasilkan karya yang
+              bermanfaat.
+            </p>
+            <a href="#contact" class="project-link"> Lihat Detail ↗ </a>
+          </div>
+
+          <div class="card">
+            <div class="project-image">🎓</div>
+            <h3>Curiculum Vitae</h3>
+            <p>
+              Bagian ini menampilkan CV atau resume yang berisi ringkasan
+              pengalaman, pendidikan, keterampilan, dan pencapaian. CV ini
+              menjadi referensi bagi pihak yang tertarik untuk mengetahui latar
+              belakang dan kemampuan secara lebih mendalam.
+            </p>
+            <a href="#contact" class="project-link"> Lihat Detail ↗ </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENT -->
+    <section id="achievement">
+      <div class="container">
+        <div class="section-title">
+          <div class="tag">PENCAPAIAN</div>
+          <h2>Achievement</h2>
+          <p>
+            Pencapaian, sertifikat, pelatihan, dan pengalaman yang pernah
+            diperoleh.
+          </p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <div class="icon">🏆</div>
+            <h3>Pencapaian</h3>
+            <p><strong>Tahun:</strong> 2026</p>
+            <p><strong>Penyelenggara:</strong> LKS DIKMEN</p>
+            <p>
+              Saya waktu di masa sekolah, saya menjuarai kategori Lomba
+              Kopetensi Siswa (LKS) tingkat kabupatan di bidang reefrigeration
+              dan air conditioning dan mendapatkan juara 1 dan 3, dan
+              mendapatkan sertifikasi oleh BNSP.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">📜</div>
+            <h3>Sertifikat Pelatihan</h3>
+            <p><strong>Tahun:</strong> 2026</p>
+            <p><strong>Penyelenggara:</strong> Gemini AI</p>
+            <p>
+              Karena telah menunjukan pengetahuan, keterampilan, dan kopetensi
+              dasar yang diperlukan untuk menggunakan AI Google di lingkungan
+              pendidikan.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🚀</div>
+            <h3>Penyelesaian Proyek</h3>
+            <p><strong>Tahun:</strong> 2026</p>
+            <p>
+              <strong>Kegiatan:</strong> Pembuatan web Portofolio dan pembuatan
+              Trainer Heat Recovery
+            </p>
+            <p>
+              Saya telah berhasil menyelesaikan proyek pembuatan website
+              portofolio dan pembuatan trainer heat recovery, yang menunjukkan
+              kemampuan saya dalam pengembangan web dan pemahaman konsep teknik.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <div class="tag">MARI TERHUBUNG</div>
+            <h2 style="font-size: 38px; margin: 12px 0">Contact Me</h2>
+
+            <p>
+              Terima kasih telah mengunjungi portofolio saya. Saya terbuka untuk
+              berdiskusi, belajar bersama, dan berkolaborasi dalam proyek yang
+              bermanfaat.
+            </p>
+
+            <a href="mailto:wisnuhutama65@gmail.com" class="btn">
+              Kirim Email ↗
+            </a>
+          </div>
+
+          <div>
+            <a href="mailto:wisnuhutama65@gmail.com" class="contact-item">
+              <strong>📧 Email</strong>
+              <span>klik untuk mengirim pesan</span>
+            </a>
+
+            <a
+              href="https://wa.me/qr/T6AECJ5QBPMZD1"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-item"
+            >
+              <strong>📱 WhatsApp</strong>
+              <span>klik untuk mengirim pesan</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-item"
+            >
+              <strong>🔗 LinkedIn</strong>
+              <span>klik untuk melihat</span>
+            </a>
+
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-item"
+            >
+              <strong>💻 GitHub</strong>
+              <span>klik untuk melihat</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>
+        &copy; <span id="year"></span> Nama Anda. Website Portofolio Mahasiswa
+        Informatika.
+      </p>
+    </footer>
+
+    <script>
+      // Menampilkan tahun secara otomatis
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Efek navigasi aktif saat bagian website diklik
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", function () {
+          document
+            .querySelectorAll(".nav-links a")
+            .forEach((item) => (item.style.color = ""));
+
+          this.style.color = "#70e1d1";
+        });
+      });
+    </script>
+  </body>
+</html>
